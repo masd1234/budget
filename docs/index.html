@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My budget</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="index.js" async></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./resources/css/all.css" rel="stylesheet" />
+  </head>
+  <body>
+    <section class="bubgetCont">
+      <label for="budget">Budget:</label>
+      <select name="budget" id="currency">
+        <option value="$">USD</option>
+        <option value="¥">CNY</option>
+        <option value="£">GBP</option>
+        <option value="€">EUR</option>
+      </select>
+      <input id="numbers" name="budget" type="number" />
+
+      <button class="bubgetButtom" onclick="inputCont.addValueBudget()">
+        Add Budget
+      </button>
+      <button class="income">Income</button>
+      <button class="expense">Expense</button>
+    </section>
+    <section class="bubjecProjected">
+      <div class="detailContainer" id="budget">
+        <div><h1>Budget</h1></div>
+      </div>
+      <div class="detailContainer" id="incomeContainer">
+        <div><h1>Incomes</h1></div>
+      </div>
+      <div class="detailContainer" id="expenseContainer">
+        <div><h1>Expenses</h1></div>
+      </div>
+      <div class="detailContainer" id="updateContainer">
+        <div><h1>Updated Budget</h1></div>
+        <div class="icon"><i class="fas fa-wallet"></i><h1 class="updatedValueBudget" onfocus="values.updater()"></h1></div>
+        <div class="icon"><i class="fas fa-money-bill"></i></div>
+        <div class="icon"><i class="fas fa-minus-circle"></i></div>
+      </div>
+    </section>
+  </body>
+</html>
