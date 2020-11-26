@@ -11,15 +11,16 @@
       href="https://fonts.googleapis.com/css2?family=Hind&display=swap"
       rel="stylesheet"
     />
+    <link href="./resources/css/all.css" rel="stylesheet" />
   </head>
   <body>
     <section class="bubgetCont">
       <label for="budget">Budget:</label>
-      <select name="budget">
-        <option value="usd">American Dolar</option>
-        <option value="cny">Chinese Yuan</option>
-        <option value="gbp">British pound</option>
-        <option value="eur">European Euro</option>
+      <select name="budget" id="currency">
+        <option value="$">USD</option>
+        <option value="¥">CNY</option>
+        <option value="£">GBP</option>
+        <option value="€">EUR</option>
       </select>
       <input id="numbers" name="budget" type="number" />
 
@@ -31,16 +32,19 @@
     </section>
     <section class="bubjecProjected">
       <div class="detailContainer" id="budget">
-        <h1>Budget</h1>
+        <div><h1>Budget</h1></div>
       </div>
       <div class="detailContainer" id="incomeContainer">
-        <h1>Incomes</h1>
+        <div><h1>Incomes</h1></div>
       </div>
       <div class="detailContainer" id="expenseContainer">
-        <h1>Expenses</h1>
+        <div><h1>Expenses</h1></div>
       </div>
       <div class="detailContainer" id="updateContainer">
-        <h1>Updated Budget</h1>
+        <div><h1>Updated Budget</h1></div>
+        <div class="icon"><i class="fas fa-wallet"></i><h1 class="updatedValueBudget" onfocus="values.updater()"></h1></div>
+        <div class="icon"><i class="fas fa-money-bill"></i></div>
+        <div class="icon"><i class="fas fa-minus-circle"></i></div>
       </div>
     </section>
   </body>

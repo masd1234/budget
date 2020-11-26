@@ -77,7 +77,7 @@ body {
 }
 
 .bubjecProjected {
-  height: 60%;
+  height: 100%;
   display: flex;
   justify-content: space-around;
 }
@@ -87,15 +87,48 @@ body {
   color: black;
   flex-basis: 25%;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+}
+
+.detailContainer h1 {
+  display: block;
+  text-align: center;
+}
+
+.icon {
+  font-size: 4rem;
+  height: 18rem;
+  color: rgb(1, 90, 206);
 }
 
 .cont {
-  width: 40%;
-  border: 1px rgb(0, 0, 0) solid;
-  margin: 0.2rem 0;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  flex-basis: 100%;
   color: rgb(0, 0, 0);
+}
+
+.cont h4 {
+  max-width: 1rem;
+}
+
+.cont buttom {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#minus {
+  color: red;
+  font-size: 2rem;
+}
+
+#minus:hover {
+  color: whitesmoke;
+  background-color: red;
+  transition: 1s;
 }
