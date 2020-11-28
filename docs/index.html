@@ -15,20 +15,49 @@
   </head>
   <body>
     <section class="bubgetCont">
-      <label for="budget">Budget:</label>
-      <select name="budget" id="currency">
-        <option value="$">USD</option>
-        <option value="¥">CNY</option>
-        <option value="£">GBP</option>
-        <option value="€">EUR</option>
-      </select>
-      <input id="numbers" name="budget" type="number" />
-
-      <button class="bubgetButtom" onclick="inputCont.addValueBudget()">
-        Add Budget
-      </button>
-      <button class="income">Income</button>
-      <button class="expense">Expense</button>
+      <div class="addBudgetContainer">
+        <label for="budget">Budget:</label>
+        <select name="budget" id="currency">
+          <option value="$">USD</option>
+          <option value="¥">CNY</option>
+          <option value="£">GBP</option>
+          <option value="€">EUR</option>
+        </select>
+        <input id="numbers" name="budget" type="number" />
+        <button class="bubgetButtom" onclick="inputCont.addValueBudget()">
+          Add Budget
+        </button>
+      </div>
+      <div class="addIcomeContainer">
+        <label for="incomeInput">Ref:</label>
+        <input id="incomeInputIdetail" name="incomeInput" type="text" />
+        <label for="incomeInput">Amount:</label>
+        <label for="budget"></label>
+        <select name="budget" id="currencyIncome">
+          <option value="$">USD</option>
+          <option value="¥">CNY</option>
+          <option value="£">GBP</option>
+          <option value="€">EUR</option>
+        </select>
+        <input id="incomeInputIdValue" name="incomeInput" type="number" />
+        <button class="income" onclick="incomeInput.addValueIncome()">
+          Income
+        </button>
+      </div>
+      <div class="addExpenseContainer">
+        <label for="expenseInputIdetail">Ref:</label>
+        <input id="expenseInputIdValue" name="expenseInput" type="number" />
+        <label for="budget"></label>
+        <label for="ExpenseInput">Amount:</label>
+        <select name="budget" id="currencyExpense">
+          <option value="$">USD</option>
+          <option value="¥">CNY</option>
+          <option value="£">GBP</option>
+          <option value="€">EUR</option>
+        </select>
+        <input id="expenseExpense" name="expenseExpense" type="text" />
+        <button class="expense">Expense</button>
+      </div>
     </section>
     <section class="bubjecProjected">
       <div class="detailContainer" id="budget">
@@ -41,10 +70,18 @@
         <div><h1>Expenses</h1></div>
       </div>
       <div class="detailContainer" id="updateContainer">
-        <div><h1>Updated Budget</h1></div>
-        <div class="icon"><i class="fas fa-wallet"></i><h1 class="updatedValueBudget" onfocus="values.updater()"></h1></div>
-        <div class="icon"><i class="fas fa-money-bill"></i></div>
-        <div class="icon"><i class="fas fa-minus-circle"></i></div>
+        <div class="icon">
+          <h6>Balance</h6>
+          <i class="fas fa-wallet"></i>
+        </div>
+        <div class="icon">
+          <h6>Total Income</h6>
+          <i class="fas fa-money-bill"></i>
+        </div>
+        <div class="icon">
+          <h6>Total Expenses</h6>
+          <i class="fas fa-minus-circle"></i>
+        </div>
       </div>
     </section>
   </body>
