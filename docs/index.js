@@ -1,6 +1,9 @@
 let inputCont = {
   inpt: document.querySelector("#numbers"),
   inptIcome: document.querySelector("#incomeIput"),
+  currencySelector: document.getElementById("currency"),
+  balanceSelector: document.getElementById("balance"),
+  balanceValue: 0,
 
   checkValue(e) {
     let inputValue = this.inpt.value;
@@ -8,18 +11,31 @@ let inputCont = {
       alert("Negative values are not allowed");
       stopPropagation(e);
     } else if (inputValue.length === 0) {
-      alert("The input field canno be empty");
+      alert("The input field cannot be empty");
       stopPropagation(e);
     } else {
       return inputValue;
     }
   },
 
+  updaterBalance() {
+    let valueChecked = this.checkValue();
+    let transformValueChecked = parseInt(valueChecked, 10);
+
+    let currencyCreatorBudget = document.createElement("h4");
+    currencyCreatorBudget.innerHTML = this.currencySelector.value;
+
+    this.balanceValue += transformValueChecked;
+    this.balanceSelector.innerHTML = this.balanceValue;
+    this.balanceSelector.appendChild(currencyCreatorBudget);
+  },
+
   addValueBudget() {
     let valueChecked = this.checkValue();
+    let updateDom = this.updaterBalance();
     //read the value of the input field
     let containerSelector = document.querySelector(".detailContainer");
-    let currencySelector = document.getElementById("currency").value;
+
     let inputSelector = document.getElementById("numbers");
     // creates the DOM elements
     let containerCreator = document.createElement("div");
@@ -29,17 +45,16 @@ let inputCont = {
     //assing the typed value to the DOM node
     buttomMinusCreator.innerHTML = "x";
     valueCreator.innerHTML = valueChecked;
-    currencyCreator.innerHTML = currencySelector;
+    currencyCreator.innerHTML = this.currencySelector.value;
     //add the class .cont fot styling
     buttomMinusCreator.id = "minus";
     containerCreator.classList.add("cont");
-
     // Appends the DOM elements
     containerCreator.appendChild(currencyCreator);
     containerCreator.appendChild(valueCreator);
     containerCreator.appendChild(buttomMinusCreator);
     containerSelector.appendChild(containerCreator);
-
+    // Resets the value on the input field to none
     inputSelector.value = null;
   },
 
@@ -59,16 +74,18 @@ let incomeInput = {
   currencyIdIncome: document.getElementById("currencyIncome"),
 
   addValueIncome() {
+    //read the value in every input
     let descriptionValue = this.inputFieldDescription.value;
     let incomeValue = this.inputFieldValue.value;
     let currencyIncomeValue = this.currencyIdIncome.value;
-
+    //creates differents html element to be append on the DOM
     let containerCreatorIncome = document.createElement("div");
     let valueCreatorIncome = document.createElement("h4");
     let descriptionCreatorIncome = document.createElement("h4");
     let currencyCreatorIncome = document.createElement("h4");
     let buttomDeleteIncome = document.createElement("buttom");
 
+    //cheks if the input are negative or 0 if they are not the functions is executed
     if (document.getElementById("incomeInputIdValue").value < 0) {
       alert("Negative values are not allowed");
       stopPropagation(e);

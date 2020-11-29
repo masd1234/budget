@@ -9,8 +9,9 @@ html {
   font-family: "Hind", sans-serif;
 }
 
+html,
 body {
-  height: 100vh;
+  height: 100%;
 }
 
 .bubgetCont {
@@ -44,7 +45,7 @@ body {
 .budjecProjected {
   display: flex;
   justify-content: space-around;
-  height: 100%;
+  height: auto;
 }
 
 .addBudgetContainer,
@@ -61,6 +62,7 @@ body {
 .bubgetCont input,
 .bubgetCont select {
   border: none;
+  border-radius: 0.2rem;
 }
 
 .bubgetCont button {
@@ -115,6 +117,7 @@ buttom {
 .detailContainer h1 {
   display: block;
   text-align: center;
+  font-size: 2rem;
 }
 
 #updateContainer {
@@ -126,7 +129,7 @@ buttom {
 }
 
 .icon {
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: rgb(1, 90, 206);
 }
 
@@ -145,10 +148,12 @@ buttom {
   transition: 1s;
 }
 
+#numbers,
 .addIcomeContainer input,
 .addExpenseContainer input {
   width: 15%;
   text-align: center;
+  border-radius: 0.5rem;
 }
 
 #incomeCont,
@@ -172,13 +177,25 @@ buttom {
   color: red;
 }
 
+#balance {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+
 @media only screen and (max-width: 610px) {
   .bubgetCont {
-    font-size: 0.7rem;
+    font-size: 1.5rem;
   }
 
   .icon {
     font-size: 2rem;
+  }
+
+  .detailContainer h1 {
+    font-size: 1.2rem;
   }
 
   .addBudgetContainer,
