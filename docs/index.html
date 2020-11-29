@@ -46,17 +46,21 @@
       </div>
       <div class="addExpenseContainer">
         <label for="expenseInputIdetail">Ref:</label>
-        <input id="expenseInputIdValue" name="expenseInput" type="number" />
+        <input id="expenseInputIdDescription" name="expenseInput" type="text" />
+
+        <label for="expense">Amount:</label>
+
         <label for="budget"></label>
-        <label for="ExpenseInput">Amount:</label>
         <select name="budget" id="currencyExpense">
           <option value="$">USD</option>
           <option value="¥">CNY</option>
           <option value="£">GBP</option>
           <option value="€">EUR</option>
         </select>
-        <input id="expenseExpense" name="expenseExpense" type="text" />
-        <button class="expense">Expense</button>
+        <input id="expenseValue" name="expense" type="number" />
+        <button class="buttomExpense" onclick="expenseInput.addExpense()">
+          Expense
+        </button>
       </div>
     </section>
     <section class="bubjecProjected">
