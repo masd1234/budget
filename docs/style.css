@@ -41,11 +41,20 @@ body {
   font-size: 2rem;
 }
 
-.addBudgetContainer {
+.budjecProjected {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.addBudgetContainer,
+.addIcomeContainer,
+.addExpenseContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  flex-grow: 1;
 }
 
 .bubgetCont button,
@@ -56,18 +65,26 @@ body {
 
 .bubgetCont button {
   padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 0.5rem;
+  font-size: 1rem;
 }
 
 .bubgetCont input {
-  width: 25%;
+  width: 20%;
 }
 
-.income,
-.buttomExpense,
-.bubgetButtom {
-  cursor: pointer;
-  border-radius: 10rem;
-  background-color: white;
+.bubgetCont select {
+  font-size: 1rem;
+}
+
+buttom {
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bubgetButtom:hover {
@@ -88,12 +105,6 @@ body {
   transition: 1s;
 }
 
-.bubjecProjected {
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-
 .detailContainer {
   font-size: 1.5rem;
   color: black;
@@ -106,34 +117,17 @@ body {
   text-align: center;
 }
 
+#updateContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3rem;
+}
+
 .icon {
   font-size: 4rem;
-  height: 18rem;
   color: rgb(1, 90, 206);
-}
-
-.cont {
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem;
-  flex-basis: 100%;
-  color: rgb(0, 0, 0);
-}
-
-.cont h4 {
-  max-width: 1rem;
-}
-
-.cont buttom,
-#incomeCont buttom,
-.containerExpenseId buttom {
-  height: 20px;
-  width: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #minus,
@@ -151,13 +145,6 @@ body {
   transition: 1s;
 }
 
-.addIcomeContainer,
-.addExpenseContainer {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
 .addIcomeContainer input,
 .addExpenseContainer input {
   width: 15%;
@@ -165,28 +152,56 @@ body {
 }
 
 #incomeCont,
-.containerExpenseId {
+.containerExpenseId,
+.cont {
   display: flex;
   justify-content: center;
   gap: 1rem;
   align-items: center;
 }
 
+#budgetTitle {
+  color: rgb(1, 90, 206);
+}
+
+#incomeTitle {
+  color: rgb(9, 170, 9);
+}
+
+#expenseTitle {
+  color: red;
+}
+
 @media only screen and (max-width: 610px) {
   .bubgetCont {
-    font-size: 1.2rem;
-  }
-
-  .detailContainer {
-    font-size: 1.1rem;
+    font-size: 0.7rem;
   }
 
   .icon {
-    font-size: 2.6rem;
+    font-size: 2rem;
   }
+
+  .addBudgetContainer,
   .addIcomeContainer,
-  .addExpenseContainer,
-  .addBudgetContainer {
-    flex-basis: 100%;
+  .addExpenseContainer {
+    gap: 0.5rem;
+  }
+
+  buttom {
+    height: 1.5rem;
+    width: 1.2rem;
+  }
+
+  #incomeCont,
+  .containerExpenseId,
+  .cont {
+    gap: 0.5rem;
+  }
+
+  #minus,
+  .detailContainer,
+  #buttomDeleteId,
+  #buttomDeleteIdExpense {
+    font-size: 1.1rem;
   }
 }
