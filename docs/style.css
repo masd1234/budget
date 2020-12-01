@@ -70,6 +70,7 @@ body {
 .bubgetCont input,
 .bubgetCont select {
   border: 1px solid;
+  border: none;
   border-radius: 0.5rem;
 }
 

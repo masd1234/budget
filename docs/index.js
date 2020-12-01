@@ -1,10 +1,18 @@
+let totalValuesBalance = {
+  balanceSelector: document.getElementById("balance"),
+  balanceValue: 0,
+  valueIncomeTotal: 0,
+  valueExpenseTotal: 0,
+};
+
+//budget Input
+
 let inputCont = {
   inpt: document.getElementById("budgetInputIdValue"),
   inptIcome: document.querySelector("#incomeIput"),
   currencySelector: document.getElementById("currency"),
-  balanceSelector: document.getElementById("balance"),
-  balanceValue: 0,
 
+  //value verification 0 or negavite values are not allowed
   checkValue(e) {
     let inputValue = this.inpt.value;
     if (inputValue < 0) {
@@ -23,9 +31,10 @@ let inputCont = {
     let transformValueChecked = parseInt(valueChecked, 10);
     let currencyCreatorBudget = document.createElement("h4");
     currencyCreatorBudget.innerHTML = this.currencySelector.value;
-    this.balanceValue += transformValueChecked;
-    this.balanceSelector.innerHTML = this.balanceValue;
-    this.balanceSelector.appendChild(currencyCreatorBudget);
+    totalValuesBalance.balanceValue += transformValueChecked;
+    totalValuesBalance.balanceSelector.innerHTML =
+      totalValuesBalance.balanceValue;
+    totalValuesBalance.balanceSelector.appendChild(currencyCreatorBudget);
   },
 
   addValueBudget() {
@@ -34,7 +43,7 @@ let inputCont = {
     //read the value of the input field
     let containerSelector = document.querySelector(".detailContainer");
 
-    let inputSelector = document.getElementById("numbudgetInputIdValuebers");
+    let inputSelector = document.getElementById("budgetInputIdValue");
     // creates the DOM elements
     let containerCreator = document.createElement("div");
     let valueCreator = document.createElement("h4");
@@ -47,6 +56,7 @@ let inputCont = {
     //add the class .cont fot styling
     buttomMinusCreator.id = "minus";
     containerCreator.classList.add("cont");
+    valueCreator.id = "c";
     // Appends the DOM elements
     containerCreator.appendChild(currencyCreator);
     containerCreator.appendChild(valueCreator);
@@ -63,7 +73,7 @@ let inputCont = {
   },
 };
 
-document.body.addEventListener("click", inputCont.removeContBudget);
+//Income Input
 
 let incomeInput = {
   inputFieldDescription: document.getElementById("incomeInputIdetail"),
@@ -71,17 +81,23 @@ let incomeInput = {
   indIcomeCont: document.getElementById("incomeContainer"),
   currencyIdIncome: document.getElementById("currencyIncome"),
   valueIncomeTotalSelector: document.getElementById("incomeBalance"),
-  valueIncomeTotal: 0,
 
   updateBalanceIncome() {
     let incomeValueIncomeUpdate = this.inputFieldValue.value;
     let transformValueIncome = parseInt(incomeValueIncomeUpdate, 10);
     let currencyCreatorIncome = document.createElement("h4");
+
     currencyCreatorIncome.innerHTML = this.currencyIdIncome.value;
 
-    this.valueIncomeTotal += transformValueIncome;
-    this.valueIncomeTotalSelector.innerHTML = this.valueIncomeTotal;
+    totalValuesBalance.valueIncomeTotal += transformValueIncome;
+    totalValuesBalance.balanceValue += transformValueIncome;
+
+    this.valueIncomeTotalSelector.innerHTML =
+      totalValuesBalance.valueIncomeTotal;
+
     this.valueIncomeTotalSelector.appendChild(currencyCreatorIncome);
+
+    totalValuesBalance.balanceSelector.innerHTML = `${this.currencyIdIncome.value} ${totalValuesBalance.balanceValue}`;
   },
 
   addValueIncome() {
@@ -136,7 +152,7 @@ let incomeInput = {
   },
 };
 
-document.body.addEventListener("click", incomeInput.removeContIncome);
+//expense Input
 
 let expenseInput = {
   expenseSelector: document.getElementById("expenseContainer"),
@@ -146,14 +162,23 @@ let expenseInput = {
     "expenseInputIdDescription"
   ),
   valueExpenseTotalSelector: document.getElementById("expenseBalance"),
-  valueExpenseTotal: 0,
 
   updateBalanceExpense() {
     let ValueExpenseUpdate = this.expenseValueSelector.value;
     let transformValueExpense = parseInt(ValueExpenseUpdate, 10);
-    this.valueExpenseTotal += transformValueExpense;
-    this.valueExpenseTotalSelector.innerHTML = this.valueExpenseTotal;
+    let currencyCreatorExpense = document.createElement("h4");
+
+    totalValuesBalance.valueExpenseTotal += transformValueExpense;
+    this.valueExpenseTotalSelector.innerHTML =
+      totalValuesBalance.valueExpenseTotal;
+
+    totalValuesBalance.balanceValue -= transformValueExpense;
+
+    currencyCreatorExpense.innerHTML = this.expenseCurrencySelector.value;
+    this.valueExpenseTotalSelector.appendChild(currencyCreatorExpense);
+    totalValuesBalance.balanceSelector.innerHTML = `${this.expenseCurrencySelector.value} ${totalValuesBalance.balanceValue}`;
   },
+
   addExpense() {
     if (this.expenseValueSelector.value < 0) {
       alert("Negative values are not allowed");
@@ -197,5 +222,9 @@ let expenseInput = {
     }
   },
 };
+
+document.body.addEventListener("click", incomeInput.removeContIncome);
+
+document.body.addEventListener("click", inputCont.removeContBudget);
 
 document.body.addEventListener("click", expenseInput.removeContExpense);
