@@ -1,5 +1,5 @@
 let inputCont = {
-  inpt: document.querySelector("#numbers"),
+  inpt: document.getElementById("budgetInputIdValue"),
   inptIcome: document.querySelector("#incomeIput"),
   currencySelector: document.getElementById("currency"),
   balanceSelector: document.getElementById("balance"),
@@ -21,10 +21,8 @@ let inputCont = {
   updaterBalance() {
     let valueChecked = this.checkValue();
     let transformValueChecked = parseInt(valueChecked, 10);
-
     let currencyCreatorBudget = document.createElement("h4");
     currencyCreatorBudget.innerHTML = this.currencySelector.value;
-
     this.balanceValue += transformValueChecked;
     this.balanceSelector.innerHTML = this.balanceValue;
     this.balanceSelector.appendChild(currencyCreatorBudget);
@@ -36,7 +34,7 @@ let inputCont = {
     //read the value of the input field
     let containerSelector = document.querySelector(".detailContainer");
 
-    let inputSelector = document.getElementById("numbers");
+    let inputSelector = document.getElementById("numbudgetInputIdValuebers");
     // creates the DOM elements
     let containerCreator = document.createElement("div");
     let valueCreator = document.createElement("h4");
@@ -72,6 +70,19 @@ let incomeInput = {
   inputFieldValue: document.getElementById("incomeInputIdValue"),
   indIcomeCont: document.getElementById("incomeContainer"),
   currencyIdIncome: document.getElementById("currencyIncome"),
+  valueIncomeTotalSelector: document.getElementById("incomeBalance"),
+  valueIncomeTotal: 0,
+
+  updateBalanceIncome() {
+    let incomeValueIncomeUpdate = this.inputFieldValue.value;
+    let transformValueIncome = parseInt(incomeValueIncomeUpdate, 10);
+    let currencyCreatorIncome = document.createElement("h4");
+    currencyCreatorIncome.innerHTML = this.currencyIdIncome.value;
+
+    this.valueIncomeTotal += transformValueIncome;
+    this.valueIncomeTotalSelector.innerHTML = this.valueIncomeTotal;
+    this.valueIncomeTotalSelector.appendChild(currencyCreatorIncome);
+  },
 
   addValueIncome() {
     //read the value in every input
@@ -98,6 +109,7 @@ let incomeInput = {
     } else {
       containerCreatorIncome.id = "incomeCont";
       buttomDeleteIncome.id = "buttomDeleteId";
+      valueCreatorIncome.id = "idIncomeAdded";
 
       buttomDeleteIncome.innerHTML = "x";
       descriptionCreatorIncome.innerHTML = descriptionValue;
@@ -109,6 +121,8 @@ let incomeInput = {
       containerCreatorIncome.appendChild(valueCreatorIncome);
       containerCreatorIncome.appendChild(buttomDeleteIncome);
       this.indIcomeCont.appendChild(containerCreatorIncome);
+
+      this.updateBalanceIncome();
 
       this.inputFieldDescription.value = null;
       this.inputFieldValue.value = null;
@@ -131,6 +145,15 @@ let expenseInput = {
   expenseDescriptionSelector: document.getElementById(
     "expenseInputIdDescription"
   ),
+  valueExpenseTotalSelector: document.getElementById("expenseBalance"),
+  valueExpenseTotal: 0,
+
+  updateBalanceExpense() {
+    let ValueExpenseUpdate = this.expenseValueSelector.value;
+    let transformValueExpense = parseInt(ValueExpenseUpdate, 10);
+    this.valueExpenseTotal += transformValueExpense;
+    this.valueExpenseTotalSelector.innerHTML = this.valueExpenseTotal;
+  },
   addExpense() {
     if (this.expenseValueSelector.value < 0) {
       alert("Negative values are not allowed");
@@ -162,6 +185,7 @@ let expenseInput = {
     containerCreatorExpense.appendChild(currencyCreatorExpense);
     containerCreatorExpense.appendChild(valueCreatorExpense);
     containerCreatorExpense.appendChild(buttomDeleteExpense);
+    this.updateBalanceExpense();
 
     this.expenseDescriptionSelector.value = null;
     this.expenseValueSelector.value = null;

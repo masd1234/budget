@@ -42,10 +42,18 @@ body {
   font-size: 2rem;
 }
 
+/* header section*/
+
 .budjecProjected {
   display: flex;
   justify-content: space-around;
   height: auto;
+}
+
+.inputs {
+  width: 10rem;
+  text-align: center;
+  border-radius: 0.5rem;
 }
 
 .addBudgetContainer,
@@ -61,26 +69,16 @@ body {
 .bubgetCont button,
 .bubgetCont input,
 .bubgetCont select {
-  border: none;
-  border-radius: 0.2rem;
-}
-
-.bubgetCont button {
-  padding: 0.4rem 0.6rem;
-  cursor: pointer;
-  background-color: white;
+  border: 1px solid;
   border-radius: 0.5rem;
+}
+
+.selectCurrency {
   font-size: 1rem;
+  padding: 0.123rem;
 }
 
-.bubgetCont input {
-  width: 20%;
-}
-
-.bubgetCont select {
-  font-size: 1rem;
-}
-
+/*buttoms*/
 buttom {
   height: 2rem;
   width: 2rem;
@@ -89,13 +87,20 @@ buttom {
   align-items: center;
 }
 
+.bubgetCont button {
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  background-color: white;
+  font-size: 1rem;
+}
+
 .bubgetButtom:hover {
   background-color: rgb(0, 79, 226);
   color: white;
   transition: 1s;
 }
 
-.income:hover {
+.incometButtom:hover {
   background-color: rgb(0, 226, 0);
   color: white;
   transition: 1s;
@@ -129,6 +134,11 @@ buttom {
 }
 
 .icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 160px;
   font-size: 3.5rem;
   color: rgb(1, 90, 206);
 }
@@ -146,14 +156,6 @@ buttom {
   color: whitesmoke;
   background-color: red;
   transition: 1s;
-}
-
-#numbers,
-.addIcomeContainer input,
-.addExpenseContainer input {
-  width: 15%;
-  text-align: center;
-  border-radius: 0.5rem;
 }
 
 #incomeCont,
@@ -177,7 +179,9 @@ buttom {
   color: red;
 }
 
-#balance {
+#balance,
+#incomeBalance,
+#expenseBalance {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
@@ -185,9 +189,21 @@ buttom {
   align-items: center;
 }
 
+#incomeBalance {
+  color: rgb(14, 177, 14);
+}
+
+#expenseBalance {
+  color: rgb(235, 14, 14);
+}
+
 @media only screen and (max-width: 610px) {
   .bubgetCont {
     font-size: 1.5rem;
+  }
+
+  .inputs {
+    width: 15%;
   }
 
   .icon {
