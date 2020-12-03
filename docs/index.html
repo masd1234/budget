@@ -38,9 +38,14 @@
           name="incomeInput"
           type="text"
         />
-        <label for="incomeInput">Amount:</label>
+        <label for="incomeInput"></label>
         <label for="budget"></label>
-        <select class="selectCurrency" name="budget" id="currencyIncome">
+        <select
+          class="selectCurrency"
+          name="budget"
+          id="currencyIncome"
+          placeholder=""
+        >
           <option value="$">USD</option>
         </select>
         <input
@@ -62,7 +67,7 @@
           type="text"
         />
 
-        <label for="expense">Amount:</label>
+        <label for="expense"></label>
 
         <label for="budget"></label>
         <select class="selectCurrency" name="budget" id="currencyExpense">
@@ -85,6 +90,7 @@
         <div><h1 id="expenseTitle">Expenses</h1></div>
       </div>
       <div class="detailContainer" id="updateContainer">
+        <h1 id="updateContainerTitle">Total</h1>
         <div class="icon">
           <h6>Balance</h6>
           <i class="fas fa-wallet"></i>
