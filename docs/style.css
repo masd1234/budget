@@ -136,7 +136,7 @@ buttom {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
   height: 100%;
 }
 
@@ -179,7 +179,7 @@ buttom {
   gap: 1rem;
   align-items: center;
   height: 25px;
-  width: 130px;
+ width: 90%;
   border: 0.1px solid lightgray;
 }
 
@@ -205,6 +205,20 @@ buttom {
   align-items: center;
 }
 
+#buttomReset {
+  color: whitesmoke;
+  border-radius: 0.5rem;
+  width: 40%;
+  background-color: rgb(1, 90, 206);
+}
+
+#buttomReset:hover {
+  color: rgb(1, 90, 206);
+  background-color: whitesmoke;
+  transition: 1s;
+  border: 1px solid lightgray;
+}
+
 #incomeBalance {
   color: rgb(14, 177, 14);
 }
@@ -220,10 +234,6 @@ buttom {
 
   .inputs {
     width: 20%;
-  }
-
-  #updateContainer {
-    height: 60%;
   }
 
   .icon {
@@ -259,6 +269,10 @@ buttom {
     font-size: 1.5rem;
     width: 100%;
     border: none;
+  }
+
+  #buttomReset {
+    width: 80%;
   }
 }
 
