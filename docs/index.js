@@ -84,9 +84,6 @@ const idReaderInput = (e) => {
     "expenseInputIdDescription"
   ).value;
 
-  DomIdIcomeRef = null;
-  console.log(DomIdIcomeRef);
-
   if (e.target.classList.contains(budgetButtomDom.classList)) {
     return addValue(DomIdBudget);
   } else if (e.target.classList.contains(incomeButtomDom.classList)) {
