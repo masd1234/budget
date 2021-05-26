@@ -37,8 +37,17 @@ body {
 
 .inputs {
   width: 10rem;
+  height: 2rem;
   text-align: center;
-  border-radius: 0.2rem;
+  background: rgb(236, 63, 10);
+  color: whitesmoke;
+}
+
+.selectCurrency {
+  font-size: 1rem;
+  padding: 0.123rem;
+  background: rgba(250, 68, 13, 0.884);
+  color: whitesmoke;
 }
 
 .addBudgetContainer,
@@ -56,45 +65,50 @@ body {
 .bubgetCont select {
   border: 1px solid;
   border: none;
-  border-radius: 0.5rem;
-}
-
-.selectCurrency {
-  font-size: 1rem;
-  padding: 0.123rem;
+  border-radius: 0.2rem;
 }
 
 /*buttoms*/
-buttom {
-  height: 2rem;
-  width: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .bubgetCont button {
   padding: 0.4rem 0.6rem;
   cursor: pointer;
-  background-color: white;
   font-size: 1rem;
 }
 
+.bubgetButtom {
+  color: whitesmoke;
+  background-color: rgba(37, 102, 223, 0.911);
+  transition: 1s;
+}
+
 .bubgetButtom:hover {
-  background-color: rgb(0, 79, 226);
+  color: rgba(37, 102, 223, 0.911);
+  background-color: whitesmoke;
+  transition: 1s;
+}
+
+.incomeButtom {
+  background-color: rgb(23, 233, 23);
   color: white;
   transition: 1s;
 }
 
-.incometButtom:hover {
-  background-color: rgb(0, 226, 0);
-  color: white;
+.incomeButtom:hover {
+  background-color: whitesmoke;
+  color: rgb(0, 226, 0);
+  transition: 1s;
+}
+
+.buttomExpense {
+  background-color: rgb(226, 0, 0);
+  color: whitesmoke;
   transition: 1s;
 }
 
 .buttomExpense:hover {
-  background-color: rgb(226, 0, 0);
-  color: white;
+  background-color: white;
+  color: rgb(226, 0, 0);
   transition: 1s;
 }
 
@@ -161,7 +175,7 @@ buttom {
   justify-content: space-evenly;
   align-items: center;
   height: 25px;
-  width: 70%;
+  width: 75%;
   border-radius: 0.5rem;
   color: whitesmoke;
 }
@@ -214,6 +228,7 @@ buttom {
   width: 40%;
   background-color: rgb(1, 90, 206);
   font-family: "Hind", sans-serif;
+  text-align: center;
 }
 
 #buttomReset:hover {
@@ -235,7 +250,7 @@ buttom {
   .icon {
     font-size: 1.5rem;
     height: 100px;
-    width: 100%;
+    width: 80%;
     border: none;
   }
 
@@ -261,6 +276,7 @@ buttom {
   .cont {
     gap: 0.3rem;
     font-size: 1rem;
+    width: 95%;
   }
 
   #buttomReset {
@@ -275,5 +291,11 @@ buttom {
   #buttomDeleteId,
   #buttomDeleteIdExpense {
     font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .icon {
+    width: 100%;
   }
 }
