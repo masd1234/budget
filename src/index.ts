@@ -8,7 +8,7 @@ const totalBalanceDom = document.querySelector("#balance") as HTMLElement;
 const budgetButtomDom = document.querySelector(".bubgetButtom") as HTMLButtonElement;
 
 const totalIncomeDom = document.querySelector("#incomeBalance") as HTMLElement;
-const incomeButtomDom = document.querySelector(".incomeButtom") as HTMLElement;
+const incomeButtomDom = document.querySelector(".incomeButtom") as HTMLButtonElement;
 
 const totalExpenseDom = document.querySelector("#expenseBalance") as HTMLElement;
 const expenseButtomDom = document.querySelector(".buttomExpense") as HTMLButtonElement;
@@ -25,6 +25,15 @@ const addValue = (idparam: string, descparam: string) => {
     const expenseDomContainer = document.getElementById("expenseContainer") as HTMLElement;
 
     if (inp.id === idparam) {
+      let itemToDelete = 'budget_cont';
+      if(idparam === 'budgetInputIdValue'){
+        itemToDelete ='budget_cont'
+      } else if(idparam === 'incomeInputIdValue'){
+        itemToDelete ='income_cont'
+      } else if (idparam === "expenseInputIdValue"){
+        itemToDelete ='expense_cont'
+      }
+
       if (!inputNumber) {
         alert(`The ${idparam} cannot be 0`);
       } else if (inputNumber < 0) {
@@ -32,14 +41,18 @@ const addValue = (idparam: string, descparam: string) => {
       } else {
         const container = document.createElement("div");
         container.classList.add("cont");
+        const templateBudget = `<p>$</p><p 
+        class="value" id=${itemToDelete}>${inputNumber}</p><buttom 
+        class="deleteButtom" id="minus">x</buttom>`;
+
+        const templateIncomeExpense = `<p>${descparam}</p><p>$</p><p 
+        class="value" id=${itemToDelete}>${inputNumber}</p><buttom 
+        class="deleteButtom" id="minus">x</buttom>`;
 
         //adds the value to the budget container and updates the total budget balance dom value
         if (inp.id === "budgetInputIdValue") {
-          container.innerHTML = `<p>$</p><p 
-        class="value" id="budget_cont">${inputNumber}</p><buttom 
-        class="deleteButtom" id="minus">x</buttom>`;
+          container.innerHTML = templateBudget
           container.id = "budget_container";
-          
           budgetDomContainer.appendChild(container);
           balance += parseInt((<HTMLInputElement>inp).value);
           totalBalanceDom.innerHTML = balance.toString();
@@ -47,9 +60,7 @@ const addValue = (idparam: string, descparam: string) => {
 
           //adds the value to the income container and updates the total income dom value
         } else if (inp.id === "incomeInputIdValue") {
-          container.innerHTML = `<p>${descparam}</p><p>$</p><p 
-          class="value" id="income_cont">${inputNumber}</p><buttom 
-          class="deleteButtom" id="minus">x</buttom>`;
+          container.innerHTML = templateIncomeExpense
           container.id = "income_container";    
           incomeDomContainer.appendChild(container);
           totalIncome += parseInt((<HTMLInputElement>inp).value);
@@ -60,10 +71,8 @@ const addValue = (idparam: string, descparam: string) => {
 
           //adds the value to the expense container and updates the total expense dom value
         } else if (inp.id === "expenseInputIdValue") {
-          container.innerHTML = `<p>${descparam}</p><p>$</p><p 
-          class="value" id="expense_cont">${inputNumber}</p><buttom 
-          class="deleteButtom" id="minus">x</buttom>`;
-          container.id = "expense_container";
+          container.innerHTML = templateIncomeExpense
+          container.id = "expense_container";   
           expenseDomContainer.appendChild(container);
           totalExpense -= parseInt((<HTMLInputElement>inp).value);
           totalExpenseDom.innerHTML = totalExpense.toString();
@@ -72,9 +81,11 @@ const addValue = (idparam: string, descparam: string) => {
           (<HTMLInputElement>inp).value = '0';
           
         }
+        (<HTMLInputElement>document.getElementById('incomeInputIdDescription')).value = "";
+        (<HTMLInputElement>document.getElementById('expenseInputIdDescription')).value = "";
       }
     }
-  });
+  }); 
 };
 
 // reads which input have a value and return the value of the input clicked for the function add value to use.
@@ -93,12 +104,14 @@ const idReaderInput = (e: Event) => {
   )).value;
 
   if (targetIdReaderInput.classList.contains(budgetButtomDom.className)) {
-    return addValue(DomIdBudget, '');
+     addValue(DomIdBudget, '');
   } else if (targetIdReaderInput.classList.contains(incomeButtomDom.className)) {
-    return addValue(DomIdIcome, DomIdIcomeRef);
+     addValue(DomIdIcome, DomIdIcomeRef);
+  
   } else if (targetIdReaderInput.classList.contains(expenseButtomDom.className)) {
-    return addValue(DomIdExpense, DomIdExpenseRef);
+     addValue(DomIdExpense, DomIdExpenseRef);
   }
+
 };
 
 //delete an specific container you click and update the total dom value
@@ -121,9 +134,11 @@ const deleteValue = (e: Event) => {
         totalBalanceDom.innerHTML = balance.toString()
         totalIncome -= stringToNumber;
         totalIncomeDom.innerHTML = totalIncome.toString()
+      
       } else if (valId === "expense_cont") {
         balance += stringToNumber;
         totalBalanceDom.innerHTML = balance.toString()
+        console.log(totalExpense)
         totalExpense += stringToNumber
         totalExpenseDom.innerHTML = totalExpense.toString()
       }
@@ -136,9 +151,9 @@ const resetAllValues = () => {
   balance = 0;
   totalIncome = 0;
   totalExpense = 0;
-  totalBalanceDom.innerHTML = 0+"";
-  totalIncomeDom.innerHTML = 0+"";
-  totalExpenseDom.innerHTML = 0+"";
+  totalBalanceDom.innerHTML = "";
+  totalIncomeDom.innerHTML = "";
+  totalExpenseDom.innerHTML = "";
   document.querySelectorAll(".cont").forEach((element) => {
     (<HTMLElement>element.parentNode).removeChild(element);
   });

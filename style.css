@@ -39,7 +39,26 @@ body {
   width: 10rem;
   height: 2rem;
   text-align: center;
-  background: rgb(236, 63, 10);
+  background: rgb(255, 255, 255);
+  color: rgb(19, 19, 19);
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#budgetInputIdValue:focus {
+  background: rgb(10, 110, 224);
+  color: whitesmoke;
+}
+
+#incomeInputIdDescription:focus,
+#incomeInputIdValue:focus {
+  background: rgb(10, 224, 39);
+  color: whitesmoke;
+}
+
+#expenseInputIdDescription:focus,
+#expenseInputIdValue:focus {
+  background: rgb(224, 10, 10);
   color: whitesmoke;
 }
 
