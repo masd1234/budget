@@ -56,7 +56,7 @@ const addValue = (idparam: string, descparam: string) => {
           budgetDomContainer.appendChild(container);
           balance += parseInt((<HTMLInputElement>inp).value);
           totalBalanceDom.innerHTML = balance.toString();
-          (<HTMLInputElement>inp).value = "0";
+          (<HTMLInputElement>inp).value = "";
 
           //adds the value to the income container and updates the total income dom value
         } else if (inp.id === "incomeInputIdValue") {
@@ -67,7 +67,7 @@ const addValue = (idparam: string, descparam: string) => {
           totalIncomeDom.innerHTML = totalIncome.toString();
           balance += parseInt((<HTMLInputElement>inp).value)
           totalBalanceDom.innerHTML = balance.toString();
-          (<HTMLInputElement>inp).value = "0";
+          (<HTMLInputElement>inp).value = "";
 
           //adds the value to the expense container and updates the total expense dom value
         } else if (inp.id === "expenseInputIdValue") {
@@ -78,7 +78,7 @@ const addValue = (idparam: string, descparam: string) => {
           totalExpenseDom.innerHTML = totalExpense.toString();
           balance -= parseInt((<HTMLInputElement>inp).value);
           totalBalanceDom.innerHTML = balance.toString();
-          (<HTMLInputElement>inp).value = '0';
+          (<HTMLInputElement>inp).value = '';
           
         }
         (<HTMLInputElement>document.getElementById('incomeInputIdDescription')).value = "";
@@ -166,3 +166,4 @@ document.addEventListener("click", deleteValue);
 budgetButtomDom.addEventListener("click", idReaderInput);
 incomeButtomDom.addEventListener("click", idReaderInput);
 expenseButtomDom.addEventListener("click", idReaderInput);
+

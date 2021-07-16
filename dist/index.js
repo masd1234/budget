@@ -48,7 +48,7 @@ var addValue = function (idparam, descparam) {
                     budgetDomContainer.appendChild(container);
                     balance += parseInt(inp.value);
                     totalBalanceDom.innerHTML = balance.toString();
-                    inp.value = "0";
+                    inp.value = "";
                     //adds the value to the income container and updates the total income dom value
                 }
                 else if (inp.id === "incomeInputIdValue") {
@@ -59,7 +59,7 @@ var addValue = function (idparam, descparam) {
                     totalIncomeDom.innerHTML = totalIncome.toString();
                     balance += parseInt(inp.value);
                     totalBalanceDom.innerHTML = balance.toString();
-                    inp.value = "0";
+                    inp.value = "";
                     //adds the value to the expense container and updates the total expense dom value
                 }
                 else if (inp.id === "expenseInputIdValue") {
@@ -70,7 +70,7 @@ var addValue = function (idparam, descparam) {
                     totalExpenseDom.innerHTML = totalExpense.toString();
                     balance -= parseInt(inp.value);
                     totalBalanceDom.innerHTML = balance.toString();
-                    inp.value = '0';
+                    inp.value = '';
                 }
                 document.getElementById('incomeInputIdDescription').value = "";
                 document.getElementById('expenseInputIdDescription').value = "";
