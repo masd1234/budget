@@ -14,6 +14,12 @@ const totalExpenseDom = document.querySelector("#expenseBalance") as HTMLElement
 const expenseButtomDom = document.querySelector(".buttomExpense") as HTMLButtonElement;
 
 const deleteButtom = document.querySelector(".deleteButtom")as HTMLButtonElement;
+const resetButtom =document.getElementById("buttomReset") as HTMLButtonElement;
+
+
+const hamburger = document.querySelector(".hamburger-menu") as HTMLElement;
+const mobileMenu = document.querySelector(".mobile-menu") as HTMLElement;
+
 
 //this functions add a container depending of the buttom you click
 const addValue = (idparam: string, descparam: string) => {
@@ -138,7 +144,6 @@ const deleteValue = (e: Event) => {
       } else if (valId === "expense_cont") {
         balance += stringToNumber;
         totalBalanceDom.innerHTML = balance.toString()
-        console.log(totalExpense)
         totalExpense += stringToNumber
         totalExpenseDom.innerHTML = totalExpense.toString()
       }
@@ -159,11 +164,17 @@ const resetAllValues = () => {
   });
 };
 
-document.addEventListener("click", deleteValue);
-(<HTMLButtonElement>document.getElementById("buttomReset")
-).addEventListener("click", resetAllValues);
+const displayMobileMenu = () =>{
+  hamburger.classList.toggle("non-active")
+  mobileMenu.classList.toggle("active")
+}
 
+
+
+hamburger.addEventListener("click", displayMobileMenu);
+resetButtom.addEventListener("click", resetAllValues);
 budgetButtomDom.addEventListener("click", idReaderInput);
 incomeButtomDom.addEventListener("click", idReaderInput);
 expenseButtomDom.addEventListener("click", idReaderInput);
+document.addEventListener("click", deleteValue);
 

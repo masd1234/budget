@@ -1,0 +1,451 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Hind", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(250, 68, 13, 0.884);
+}
+
+.header .logo {
+  flex-grow: 1;
+  padding-left: 5%;
+  color: whitesmoke;
+}
+
+.header .nav-bar {
+  flex-grow: 1;
+}
+
+.header .nav-bar ul {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  gap: 12%;
+}
+
+.header .nav-bar ul li {
+  list-style: none;
+  color: whitesmoke;
+}
+
+.header .nav-bar ul li a:link {
+  text-decoration: none;
+  font-size: 1.7rem;
+  transition: 1s;
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.header .nav-bar ul li a:visited {
+  text-decoration: none;
+  font-size: 1.7rem;
+  color: whitesmoke;
+}
+
+.header .nav-bar ul li a:hover {
+  color: rgba(250, 68, 13, 0.884);
+  background-color: whitesmoke;
+}
+
+.header .hamburger-menu {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 7%;
+}
+
+.header .hamburger-menu .line {
+  flex-grow: 1;
+  display: block;
+  color: black;
+  transition: 1s;
+  background-color: black;
+  width: 3rem;
+  height: 0.5rem;
+  margin: 0.2rem 0;
+  background-color: whitesmoke;
+}
+
+.header .hamburger-menu .active {
+  transform: rotate(45deg);
+}
+
+.header .mobile-menu {
+  display: none;
+  position: absolute;
+  top: 9%;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(250, 68, 13, 0.884);
+}
+
+.header .mobile-menu ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.header .mobile-menu ul li {
+  list-style: none;
+}
+
+.header .mobile-menu ul li a {
+  font-size: 1.7rem;
+  text-decoration: none;
+  color: whitesmoke;
+  margin: 2rem;
+  transition: 1s;
+  padding: 0 1rem;
+  border-radius: 0.5rem;
+}
+
+.header .mobile-menu ul li a:hover {
+  background-color: whitesmoke;
+  color: rgba(250, 68, 13, 0.884);
+}
+
+.non-active span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.non-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.non-active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.header .active {
+  display: block;
+}
+
+@media only screen and (max-width: 480px) {
+  .nav-bar {
+    display: none;
+  }
+  .header .hamburger-menu {
+    display: flex;
+  }
+}
+
+.bubgetCont {
+  color: whitesmoke;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+  padding: 2rem 0 0 0;
+  height: 20%;
+  background: rgba(250, 68, 13, 0.884);
+  font-size: 2rem;
+}
+
+/* header section*/
+.budjecProjected {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.inputs {
+  width: 10rem;
+  height: 2rem;
+  text-align: center;
+  background: white;
+  color: #131313;
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#budgetInputIdValue:focus {
+  background: #0a6ee0;
+  color: whitesmoke;
+}
+
+#incomeInputIdDescription:focus,
+#incomeInputIdValue:focus {
+  background: #0ae027;
+  color: whitesmoke;
+}
+
+#expenseInputIdDescription:focus,
+#expenseInputIdValue:focus {
+  background: #e00a0a;
+  color: whitesmoke;
+}
+
+.selectCurrency {
+  font-size: 1rem;
+  padding: 0.123rem;
+  background: rgba(250, 68, 13, 0.884);
+  color: whitesmoke;
+}
+
+.addBudgetContainer,
+.addIcomeContainer,
+.addExpenseContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-grow: 1;
+}
+
+.bubgetCont button,
+.bubgetCont input,
+.bubgetCont select {
+  border: 1px solid;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+/*buttoms*/
+.bubgetCont button {
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.bubgetButtom {
+  color: whitesmoke;
+  background-color: rgba(37, 102, 223, 0.911);
+  transition: 1s;
+}
+
+.bubgetButtom:hover {
+  color: rgba(37, 102, 223, 0.911);
+  background-color: whitesmoke;
+  transition: 1s;
+}
+
+.incomeButtom {
+  background-color: #17e917;
+  color: white;
+  transition: 1s;
+}
+
+.incomeButtom:hover {
+  background-color: whitesmoke;
+  color: #00e200;
+  transition: 1s;
+}
+
+.buttomExpense {
+  background-color: #e20000;
+  color: whitesmoke;
+  transition: 1s;
+}
+
+.buttomExpense:hover {
+  background-color: white;
+  color: #e20000;
+  transition: 1s;
+}
+
+.detailContainer {
+  font-size: 1.5rem;
+  color: black;
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.1rem;
+  height: 100%;
+}
+
+.detailContainer h1 {
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#updateContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+}
+
+#updateContainerTitle {
+  color: #015ace;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 150px;
+  width: 200px;
+  margin-top: 1rem;
+  font-size: 3rem;
+  color: whitesmoke;
+  border: 0.5px lightgray solid;
+  border-radius: 0.5rem;
+}
+
+#balance_container {
+  background-color: rgba(1, 90, 206, 0.87);
+}
+
+.deleteButtom {
+  font-size: 2rem;
+  height: auto;
+  text-align: center;
+  border-radius: 0.2rem;
+}
+
+.deleteButtom:hover {
+  color: red;
+  background-color: whitesmoke;
+  transition: 1s;
+}
+
+.cont {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 25px;
+  width: 75%;
+  border-radius: 0.5rem;
+  color: whitesmoke;
+}
+
+#budgetTitle {
+  color: #015ace;
+}
+
+#budget_container {
+  background-color: rgba(1, 90, 206, 0.87);
+}
+
+#income_container {
+  background-color: rgba(35, 206, 1, 0.87);
+}
+
+#expense_container {
+  background-color: rgba(206, 25, 1, 0.87);
+}
+
+#incomeTitle {
+  color: #09aa09;
+}
+
+#incomeCont {
+  background-color: rgba(0, 194, 0, 0.836);
+}
+
+#expenseTitle {
+  color: red;
+}
+
+#containerExpenseId {
+  background-color: rgba(255, 0, 0, 0.753);
+}
+
+#balance,
+#incomeBalance,
+#expenseBalance {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+
+#buttomReset {
+  color: whitesmoke;
+  border-radius: 0.5rem;
+  width: 40%;
+  background-color: #015ace;
+  font-family: "Hind", sans-serif;
+  text-align: center;
+}
+
+#buttomReset:hover {
+  color: #015ace;
+  background-color: whitesmoke;
+  transition: 1s;
+  border: 1px solid lightgray;
+}
+
+@media only screen and (max-width: 768px) {
+  .bubgetCont {
+    font-size: 1.5rem;
+  }
+  .inputs {
+    width: 20%;
+  }
+  .icon {
+    font-size: 1.5rem;
+    height: 100px;
+    width: 80%;
+    border: none;
+  }
+  .updateValues {
+    width: 100%;
+  }
+  .detailContainer h1 {
+    font-size: 1.2rem;
+  }
+  .addBudgetContainer,
+  .addIcomeContainer,
+  .addExpenseContainer {
+    gap: 0.5rem;
+  }
+  buttom {
+    height: 1.5rem;
+    width: 1.2rem;
+  }
+  .cont {
+    gap: 0.3rem;
+    font-size: 1rem;
+    width: 95%;
+  }
+  #buttomReset {
+    width: 80%;
+  }
+  #buttomReset {
+    font-size: 1rem;
+  }
+  #minus,
+  #buttomDeleteId,
+  #buttomDeleteIdExpense {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .icon {
+    height: 10rem;
+    width: 90%;
+  }
+}
+/*# sourceMappingURL=main.css.map */

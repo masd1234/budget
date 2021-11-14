@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget</title>
+    <link rel="stylesheet" href="./style/main.css" type="text/css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./resources/css/all.css" rel="stylesheet" />
+    <script src="./dist/index.js" async></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="logo">Budget App</h1>
+      <nav class="nav-bar">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./budget.html">Mybudget</a></li>
+        </ul>
+      </nav>
+
+      <div class="hamburger-menu">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+      <div class="mobile-menu">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./budget.html">Mybudget</a></li>
+        </ul>
+      </div>
+    </header>
+    <section class="bubgetCont">
+      <div class="addBudgetContainer">
+        <label for="budget">Budget:</label>
+        <select class="selectCurrency" name="budget" id="currency">
+          <option value="$">USD</option>
+        </select>
+        <input
+          class="inputs"
+          id="budgetInputIdValue"
+          name="budget"
+          type="number"
+          autofocus
+        />
+        <button class="bubgetButtom">Add Budget</button>
+      </div>
+      <div class="addIcomeContainer">
+        <label for="incomeInput">Ref:</label>
+        <input
+          class="inputs"
+          id="incomeInputIdDescription"
+          name="incomeInput"
+          type="text"
+          maxlength="10"
+        />
+        <label for="incomeInput"></label>
+        <select class="selectCurrency" name="budget" id="currencyIncome">
+          <option value="$">USD</option>
+        </select>
+        <input
+          class="inputs"
+          id="incomeInputIdValue"
+          name="incomeInput"
+          type="number"
+        />
+
+        <button class="incomeButtom">Income</button>
+      </div>
+      <div class="addExpenseContainer">
+        <label for="expenseInputIdetail">Ref:</label>
+        <input
+          class="inputs"
+          id="expenseInputIdDescription"
+          name="expenseInput"
+          type="text"
+          maxlength="10"
+        />
+
+        <label for="expense"></label>
+        <select class="selectCurrency" name="budget" id="currencyExpense">
+          <option value="$">USD</option>
+        </select>
+        <input
+          class="inputs"
+          id="expenseInputIdValue"
+          name="expense"
+          type="number"
+        />
+        <button class="buttomExpense">Expense</button>
+      </div>
+    </section>
+    <section class="budjecProjected">
+      <div class="detailContainer" id="budget">
+        <div><h1 id="budgetTitle">Budget</h1></div>
+      </div>
+      <div class="detailContainer" id="incomeContainer">
+        <div><h1 id="incomeTitle">Incomes</h1></div>
+      </div>
+      <div class="detailContainer" id="expenseContainer">
+        <div><h1 id="expenseTitle">Expenses</h1></div>
+      </div>
+      <div class="detailContainer" id="updateContainer">
+        <h1 id="updateContainerTitle">Total</h1>
+        <div class="icon" id="balance_container">
+          <h6>Balance</h6>
+          <i class="fas fa-wallet"></i>
+          <h4 class="updateValues" id="balance">0</h4>
+        </div>
+        <div class="icon" id="income_container">
+          <h6>Total Income</h6>
+          <i class="fas fa-money-bill"></i>
+          <h4 class="updateValues" id="incomeBalance">0</h4>
+        </div>
+        <div class="icon" id="expense_container">
+          <h6>Total Expenses</h6>
+          <i class="fas fa-minus-circle"></i>
+          <h4 class="updateValues" id="expenseBalance">0</h4>
+        </div>
+        <buttom id="buttomReset">Reset</buttom>
+      </div>
+    </section>
+  </body>
+</html>
