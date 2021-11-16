@@ -168,6 +168,9 @@ body {
   font-size: 5rem;
   color: whitesmoke;
   height: 6.5rem;
+  animation-name: slidein;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
 }
 
 .main .banner-container .quote {
@@ -176,6 +179,11 @@ body {
   padding: 0 0.5rem;
   cursor: pointer;
   text-decoration: none;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  animation-name: cliPathUp;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
 }
 
 .main .banner-container .quote::after {
@@ -190,6 +198,26 @@ body {
 .main .banner-container .quote:hover::after {
   width: 100%;
   opacity: 1;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cliPathUp {
+  from {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+  }
 }
 
 .bubgetCont {
@@ -443,9 +471,6 @@ body {
   .updateValues {
     width: 100%;
   }
-  .detailContainer h1 {
-    font-size: 1.2rem;
-  }
   .addBudgetContainer,
   .addIcomeContainer,
   .addExpenseContainer {
@@ -477,6 +502,9 @@ body {
   .icon {
     height: 10rem;
     width: 90%;
+  }
+  .budjecProjected .detailContainer h1 {
+    font-size: 1.4rem;
   }
 }
 /*# sourceMappingURL=main.css.map */

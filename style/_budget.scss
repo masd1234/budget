@@ -247,10 +247,6 @@
     width: 100%;
   }
 
-  .detailContainer h1 {
-    font-size: 1.2rem;
-  }
-
   .addBudgetContainer,
   .addIcomeContainer,
   .addExpenseContainer {
@@ -287,5 +283,13 @@
   .icon {
     height: 10rem;
     width: 90%;
+  }
+
+  .budjecProjected {
+    .detailContainer {
+      h1 {
+        font-size: 1.4rem;
+      }
+    }
   }
 }

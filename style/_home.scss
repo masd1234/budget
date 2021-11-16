@@ -12,6 +12,9 @@
       font-size: 5rem;
       color: $secondary-color;
       height: 6.5rem;
+      animation-name: slidein;
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards;
     }
     .quote {
       font-size: 2rem;
@@ -19,6 +22,11 @@
       padding: 0 0.5rem;
       cursor: pointer;
       text-decoration: none;
+      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+      animation-name: cliPathUp;
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
     }
 
     .quote::after {
@@ -34,5 +42,27 @@
       width: 100%;
       opacity: 1;
     }
+  }
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes cliPathUp {
+  from {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+
+  to {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
   }
 }
