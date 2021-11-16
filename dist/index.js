@@ -134,9 +134,9 @@ var resetAllValues = function () {
     balance = 0;
     totalIncome = 0;
     totalExpense = 0;
-    totalBalanceDom.innerHTML = "";
-    totalIncomeDom.innerHTML = "";
-    totalExpenseDom.innerHTML = "";
+    totalBalanceDom.innerHTML = "0";
+    totalIncomeDom.innerHTML = "0";
+    totalExpenseDom.innerHTML = "0";
     document.querySelectorAll(".cont").forEach(function (element) {
         element.parentNode.removeChild(element);
     });

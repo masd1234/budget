@@ -70,10 +70,10 @@
   .mobile-menu {
     display: none;
     position: absolute;
-    top: 9%;
+    top: 7%;
     width: 100%;
     text-align: center;
-    background-color: $primary-color;
+    background-color: transparent;
     ul {
       display: flex;
       justify-content: space-around;
